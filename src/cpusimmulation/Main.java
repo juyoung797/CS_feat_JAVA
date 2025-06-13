@@ -2,7 +2,7 @@ package cpusimmulation;
 
 class CPU {
     public int register = 0;
-    public int[] memory = {5, 10, 0};
+    public int[] memory = {4, 5, 6};
     private static final int LOAD = 1;
     private static final int SAVE = 2;
     private static final int ADD = 3;
@@ -23,24 +23,25 @@ class CPU {
             switch (opcode) {
                 case LOAD:
                     register = memory[operand];
-                    System.out.println("MOV: Loading memory[" + operand + "] to " + memory[operand]);
+                    System.out.println("MOV: Loading memory[" + memory[pc] + "] to Register. Register: " + register);
                     break;
                 case SAVE:
                     memory[pc] = register;
-                    System.out.println("MOV: Saving memory[" + operand + "] to " + memory[operand]);
+                    System.out.println("MOV: Saving memory " + memory[pc] + " to Register. Register: " + register);
                     break;
                 case ADD:
                     register = register + operand;
-                    System.out.println("MOV: Adding memory[" + operand + "] to " + memory[operand]);
+                    System.out.println("MOV: Adding " +operand+ " to Register. Register: " + register);
                     break;
                 case SUB:
                     register = register - operand;
-                    System.out.println("MOV: Subtracting memory[" + operand + "] to " + memory[operand]);
+                    System.out.println("MOV: Subtracting " + operand + " from Register. Register: " + register);
                     break;
                 case HALT:
-                    break;
-            }
+                    return;
 
+            }
+            pc = pc + 1;
         }
     }
 
