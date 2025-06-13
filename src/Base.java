@@ -1,6 +1,6 @@
 public class Base {
-    int number =  12345678;
-    public void run() {
+    public static void run() {
+        int number =  12345678;
         String binaryString = Integer.toBinaryString(number); //2진수
         String octalString = Integer.toOctalString(number); //8진수
         String hexString = Integer.toHexString(number); //16진수
