@@ -1,3 +1,5 @@
+package cpusimmulation;
+
 public class AsciiUnicode {
     public static void run() {
         char asciiCharA = 'A';

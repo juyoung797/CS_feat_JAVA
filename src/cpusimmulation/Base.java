@@ -1,3 +1,5 @@
+package cpusimmulation;
+
 public class Base {
     public static void run() {
         int number =  12345678;
